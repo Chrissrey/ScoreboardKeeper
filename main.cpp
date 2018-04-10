@@ -1,3 +1,4 @@
+//Author:Christopher Rey Almaraz
 #include <iostream>
 #include <vector>
 
@@ -13,6 +14,8 @@ int main()
   int periods;
   int teams;
 
+vector< vector<int> >scoreBoard;
+
   cout<<"How many competitors? ";
   cin>>teams;
   cout<<"How many scoring periods? ";
@@ -27,9 +30,25 @@ int main()
   }
   else
   {
-   //make scoreboard and fill it with zeros
+       scoreBoard.resize(teams);//make scoreboard and fill it with zeros
+       for(int row=0; row<teams; row++)
+       {
+            scoreBoard[row].resize(periods);// going throuhg every row and resizing it to period/col
+            for(int col=0; col<periods; col++)
+            {
+                scoreBoard[row][col]=0;
+            }
+       }
   
-   //once created, display the scoreboard
+     for(int row=0; row<teams; row++)
+       {
+        cout<< "Player "<< row+1<<": ";
+        for(int col=0; col<periods; col++)
+        cout<< scoreBoard[row][col]<< "|";
+        cout<<endl;
+       }
+  
+//once created, display the scoreboard
   }
   return 0;
 }
