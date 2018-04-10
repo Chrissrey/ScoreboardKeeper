@@ -39,7 +39,7 @@ vector< vector<int> >scoreBoard;
                 scoreBoard[row][col]=0;
             }
        }
-     cout<<"SCOREBOARD";
+     cout<<"SCOREBOARD"<<endl;
 
      for(int row=0; row<teams; row++)
        {
